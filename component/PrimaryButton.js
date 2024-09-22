@@ -2,10 +2,7 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 import React from "react";
 
 // 按鈕設計，children要用大括號括起來
-const PrimaryButton = ({ children }) => {
-  function pressHandler() {
-    console.log("Press!");
-  }
+const PrimaryButton = ({ children, onPress }) => {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
@@ -14,7 +11,7 @@ const PrimaryButton = ({ children }) => {
             ? [styles.buttonInnerContainer, styles.iospress]
             : styles.buttonInnerContainer
         }
-        onPress={pressHandler}
+        onPress={onPress}
         android_ripple={{ color: "#34e7cc" }}
       >
         <Text style={styles.buttonText}>{children}</Text>
