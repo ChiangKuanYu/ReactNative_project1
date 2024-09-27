@@ -1,6 +1,8 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import React from "react";
 
+import Colors from "../../constants/color";
+
 // 按鈕設計，children要用大括號括起來
 const PrimaryButton = ({ children, onPress }) => {
   return (
@@ -12,7 +14,7 @@ const PrimaryButton = ({ children, onPress }) => {
             : styles.buttonInnerContainer
         }
         onPress={onPress}
-        android_ripple={{ color: "#34e7cc" }}
+        android_ripple={{ color: Colors.AndroidRipple }}
       >
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
@@ -29,14 +31,15 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonInnerContainer: {
-    backgroundColor: "#34a8e7",
+    backgroundColor: Colors.buttonBackground,
     elevtion: 4,
-    paddingHorizontal: 16,
+    paddingHorizontal: 32,
     paddingVertical: 8,
   },
   buttonText: {
     color: "white",
     textAlign: "center",
+    fontSize: 20,
   },
   iospress: {
     opacity: 0.75,
