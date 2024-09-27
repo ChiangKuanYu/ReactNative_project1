@@ -9,12 +9,12 @@ import GuessLogItem from "../component/game/GuessLogItem";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
-
-  if (rndNum === exclude) {
-    return generateRandomBetween(min, max, exclude);
-  } else {
-    return rndNum;
-  }
+  return rndNum;
+  // if (rndNum === exclude) {
+  //   return generateRandomBetween(min, max, exclude);
+  // } else {
+  //   return rndNum;
+  // }
 }
 
 let minBoundary = 1;
@@ -61,6 +61,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
       maxBoundary,
       currentNumber
     );
+
     console.log(minBoundary, maxBoundary, newnumber);
     setCurrentNumber(newnumber);
     setRoundGuess((prevRoundGuess) => [newnumber, ...prevRoundGuess]);
